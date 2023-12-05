@@ -10,6 +10,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PodcastsComponent } from './components/podcasts/podcasts.component';
 import { StackComponent } from './components/stack/stack.component';
+import { SetupComponent } from './components/setup/setup.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StackComponent } from './components/stack/stack.component';
     AboutMeComponent,
     ProjectsComponent,
     PodcastsComponent,
-    StackComponent
+    StackComponent,
+    SetupComponent
   ],
   exports: [
   ],
