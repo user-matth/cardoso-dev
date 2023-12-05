@@ -8,13 +8,17 @@ import { MediakitComponent } from './components/mediakit/mediakit.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PodcastsComponent } from './components/podcasts/podcasts.component';
+import { StackComponent } from './components/stack/stack.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     MediakitComponent,
     AboutMeComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    PodcastsComponent,
+    StackComponent
   ],
   exports: [
   ],

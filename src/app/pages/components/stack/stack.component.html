@@ -1,0 +1,22 @@
+<div class="mx-auto flex flex-col max-w-5xl justify-between gap-10 overflow-hidden px-5 py-8 xl:px-0 text-white">
+  <h1 class="flex font-bold items-start text-4xl">Stack</h1>
+  <p class="text-base text-[#888]">
+    I always receive many messages asking about the software and services I use in my day-to-day life. So, I decided to list everything in one place.
+  </p>
+  <input [(ngModel)]="search" (keyup)="searchbar()" class="flex h-10 w-full rounded-md border border-zinc-700 px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-zinc-800 dark:bg-zinc-950 dark:ring-offset-zinc-950 dark:placeholder:text-zinc-400 dark:focus-visible:ring-zinc-300" placeholder="Search the desired stack">
+  <div class="grid grid-cols-2 gap-10 lg:grid-cols-4 md:grid-cols-4 items-center" style="color: #191514;">
+    <a target="_blank" class="h-full" href="{{ stack.link }}" *ngFor="let stack of stacks">
+      <div class="rounded-lg border border-zinc-200  text-zinc-950 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50 flex flex-col hover:bg-[#121212] hover:scale-105 transform transition-all duration-500 ease-in-out items-center justify-center h-full">
+        <div class="flex flex-col space-y-1.5 p-6">
+          <img alt="{{ stack.title }}" fetchpriority="high" width="80" height="80" decoding="async" data-nimg="1" class="rounded-lg max-w-80 max-h-80 overflow-hidden bg-cover bg-center hover:scale-110 transform transition-all duration-500 ease-in-out" [src]="stack.image" style="color: transparent;">
+        </div>
+        <div class="p-6 pt-0 flex flex-col gap-2">
+            <h3 class="tracking-tight font-bold text-base text-center"><span>{{ stack.title }}</span></h3>
+        </div>
+        <div class="items-center p-6 pt-0 flex gap-2">
+            <div class="inline-flex items-center border border-zinc-200 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-950 focus:ring-offset-2 dark:border-zinc-800 dark:focus:ring-zinc-300 text-zinc-950 dark:text-zinc-50 p-2 rounded-lg"><span>{{ stack.type }}</span></div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="mx-auto flex flex-col max-w-5xl justify-between gap-10 overflow-hidden px-5 py-8 xl:px-0 text-white">
+  <h1 class="flex font-bold items-start text-4xl">Podcasts</h1>
+  <p class="text-base text-[#888]">
+    The audio is a powerful medium and a great way to converse and build new ideas. Whenever possible, I try to share my story to inspire other developers and show how the community has changed my life.
+  </p>
+  <ul class="animate-in flex flex-col animated-list" style="--index: 3;">
+    <li class="py-6 flex flex-col md:flex-row gap-4 md:gap-6 transition-opacity first:pt-0 last:pb-0" *ngFor="let project of projects">
+       <a class="w-full md:w-2/5 aspect-video bg-tertiary rounded-lg border border-zinc-700 overflow-clip select-none" target="_blank" href="{{ project.link }}">
+          <div class="relative w-full h-full overflow-hidden" style="background-color: #191514;">
+            <img alt="RodeRotas" loading="lazy" decoding="async" data-nimg="fill" class="w-full h-full" sizes="100vw" [src]="project.image" style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: contain; color: transparent;">
+          </div>
+       </a>
+       <div class="w-full md:w-3/5 space-y-2">
+          <div><a class="text-white font-medium hover:underline" target="_blank" href="{{ project.link }}">{{ project.title }}</a><time class="text-[#888]"> · {{ project.year }}</time></div>
+          <p class="line-clamp-3 text-tertiary">{{ project.description }}</p>
+       </div>
+    </li>
+ </ul>
+</div>
