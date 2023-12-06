@@ -1,0 +1,21 @@
+.web-menu {
+    display: flex;
+}
+.mobile-menu {
+    display: none;
+}
+
+.rotate-chevron-anchor:hover {
+    svg {
+        transform: rotate(180deg);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .web-menu {
+        display: none;
+    }
+    .mobile-menu {
+        display: flex;
+    }
+}

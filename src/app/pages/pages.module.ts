@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PodcastsComponent } from './components/podcasts/podcasts.component';
 import { StackComponent } from './components/stack/stack.component';
 import { SetupComponent } from './components/setup/setup.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SetupComponent } from './components/setup/setup.component';
     ProjectsComponent,
     PodcastsComponent,
     StackComponent,
-    SetupComponent
+    SetupComponent,
+    ContactComponent
   ],
   exports: [
   ],

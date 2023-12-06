@@ -1,95 +1,130 @@
-<div class="mx-auto flex max-w-5xl items-center justify-between gap-4 lg:gap-20 px-5 py-8 xl:px-0" style="position:relative">
-    <a class="flex items-center gap-2" href="/">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white">
-         <path d="M11.983 1.907a.75.75 0 00-1.292-.657l-8.5 9.5A.75.75 0 002.75 12h6.572l-1.305 6.093a.75.75 0 001.292.657l8.5-9.5A.75.75 0 0017.25 8h-6.572l1.305-6.093z" />
-       </svg>
-      <h1 class="text-2xl font-bold text-white">cardoso</h1>
-    </a>
-   <nav aria-label="Main" data-orientation="horizontal" dir="ltr" class="flex max-w-max flex-1 items-center justify-center z-10 bg-black" style="position: absolute; right: 0;">
-      <div>
-         <ul data-orientation="horizontal" class="group flex flex-1 list-none items-center justify-center space-x-1"dir="ltr">
-            <li>
-               <button id="sobreMenuButton" data-dropdown-toggle="sobreMenu" data-dropdown-offset-skidding="50" data-dropdown-trigger="hover" class="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm transition-colors hover:bg-zinc-900 hover:text-zinc-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-zinc-50 dark:data-[active]:bg-zinc-800/50 dark:data-[state=open]:bg-zinc-800/50 group font-bold" type="button">
-                  About
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180" aria-hidden="true">
-                     <path d="m6 9 6 6 6-6"></path>
-                  </svg>
-               </button>
-               <div id="sobreMenu" class="z-10 hidden divide-y divide-gray-100 rounded-lg shadow w-72 bg-black border-zinc-800 border">
-                  <ul class="text-sm text-white p-4" aria-labelledby="sobreMenuButton">
-                     <li>
-                        <a href="/about-me" class="block rounded p-3 hover:bg-zinc-800 text-white">
-                        About me
-                        <br>
-                        <span class=" text-zinc-400">
-                        Know more about me and what I do.
-                        </span>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="/projects" class="block rounded p-3 hover:bg-zinc-800 text-white">
-                        Projects
-                        <br>
-                        <span class=" text-zinc-400">
-                        All the projects I've been developing during my career.
-                        </span>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="/podcasts" class="block rounded p-3 hover:bg-zinc-800 text-white">
-                        Podcasts
-                        <br>
-                        <span class=" text-zinc-400">
-                        Sharing my story and experiences with the community...
-                        </span>
-                        </a>
-                     </li>
-                  </ul>
-               </div>
-            </li>
-            <li>
-               <button id="setupMenuButton" data-dropdown-toggle="setupMenu" data-dropdown-trigger="hover" class="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm transition-colors hover:bg-zinc-900 hover:text-zinc-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-zinc-50 dark:data-[active]:bg-zinc-800/50 dark:data-[state=open]:bg-zinc-800/50 group font-bold" type="button">
-                  Setup
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180" aria-hidden="true">
-                     <path d="m6 9 6 6 6-6"></path>
-                  </svg>
-               </button>
-               <div id="setupMenu" class="z-10 hidden divide-y divide-gray-100 rounded-lg shadow w-72 bg-black border-zinc-800 border">
-                  <ul class="text-sm text-white p-4" aria-labelledby="setupMenuButton">
-                     <li>
-                        <a href="/setup" class="block rounded p-3 hover:bg-zinc-800 text-white">
-                        Setup
-                        <br>
-                        <span class=" text-zinc-400">
-                           The main tools I use to develop my projects.
-                        </span>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="/stack" class="block rounded p-3 hover:bg-zinc-800 text-white">
-                        Stack
-                        <br>
-                        <span class=" text-zinc-400">
-                        Apps and tools that I use to improve my productivity.
-                        </span>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="#" class="block rounded p-3 hover:bg-zinc-800 text-white">
-                           Wallpapers
+<div class="w-full fixed bg-black backdrop-blur-lg bg-opacity-75 top-0 left-0" style="height: 100px; z-index: 10;">
+   <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 lg:gap-20 px-5 py-8 xl:px-0" style="position:relative">
+       <a class="flex items-center gap-2 cursor-pointer" (click)="navigate('/')">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white">
+            <path d="M11.983 1.907a.75.75 0 00-1.292-.657l-8.5 9.5A.75.75 0 002.75 12h6.572l-1.305 6.093a.75.75 0 001.292.657l8.5-9.5A.75.75 0 0017.25 8h-6.572l1.305-6.093z" />
+          </svg>
+         <h1 class="text-2xl font-bold text-white" style="line-height: 40px;">cardoso</h1>
+       </a>
+      <nav aria-label="Main" data-orientation="horizontal" dir="ltr" class="flex max-w-max flex-1 items-center justify-center z-10 web-menu" style="position: absolute; right: 0;">
+         <div>
+            <ul data-orientation="horizontal" class="group flex flex-1 list-none items-center justify-center space-x-1"dir="ltr">
+               <li>
+                  <button id="sobreMenuButton" data-dropdown-toggle="sobreMenu" data-dropdown-offset-skidding="50" data-dropdown-trigger="hover" class="group inline-flex rotate-chevron-anchor h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm transition-colors hover:bg-zinc-900 hover:text-zinc-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-zinc-50 dark:data-[active]:bg-zinc-800/50 dark:data-[state=open]:bg-zinc-800/50 group font-bold" type="button">
+                     About
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative top-[1px] ml-1 h-3 w-3 transition duration-200" aria-hidden="true">
+                        <path d="m6 9 6 6 6-6"></path>
+                     </svg>
+                  </button>
+                  <div id="sobreMenu" class="z-10 hidden divide-y divide-gray-100 rounded-lg shadow w-72 bg-black border-zinc-800 border">
+                     <ul class="text-sm text-white p-4" aria-labelledby="sobreMenuButton">
+                        <li>
+                           <a (click)="navigate('about-me')" class="block rounded p-3 hover:bg-zinc-800 text-white cursor-pointer">
+                           About me
                            <br>
                            <span class=" text-zinc-400">
-                              My favorite wallpapers for desktop and mobile.
+                           Know more about me and what I do.
                            </span>
-                        </a>
-                     </li>
-                  </ul>
-               </div>
-            </li>
-            <li class="font-bold">
-               <a class="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-900 hover:text-zinc-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-zinc-50 dark:data-[active]:bg-zinc-800/50 dark:data-[state=open]:bg-zinc-800/50" href="/contact" data-radix-collection-item="">Contact</a>
-            </li>
-         </ul>
-      </div>
-   </nav>
+                           </a>
+                        </li>
+                        <li>
+                           <a (click)="navigate('projects')" class="block rounded p-3 hover:bg-zinc-800 text-white cursor-pointer">
+                           Projects
+                           <br>
+                           <span class=" text-zinc-400">
+                           All the projects I've been developing during my career.
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a (click)="navigate('podcasts')" class="block rounded p-3 hover:bg-zinc-800 text-white cursor-pointer">
+                           Podcasts
+                           <br>
+                           <span class=" text-zinc-400">
+                           Sharing my story and experiences with the community...
+                           </span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
+               <li>
+                  <button id="setupMenuButton" data-dropdown-toggle="setupMenu" data-dropdown-trigger="hover" class="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm transition-colors hover:bg-zinc-900 hover:text-zinc-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-zinc-50 dark:data-[active]:bg-zinc-800/50 dark:data-[state=open]:bg-zinc-800/50 group font-bold rotate-chevron-anchor" type="button">
+                     Setup
+                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180" aria-hidden="true">
+                        <path d="m6 9 6 6 6-6"></path>
+                     </svg>
+                  </button>
+                  <div id="setupMenu" class="z-10 hidden divide-y divide-gray-100 rounded-lg shadow w-72 bg-black border-zinc-800 border">
+                     <ul class="text-sm text-white p-4" aria-labelledby="setupMenuButton">
+                        <li>
+                           <a (click)="navigate('setup')" class="block rounded p-3 hover:bg-zinc-800 text-white cursor-pointer">
+                           Setup
+                           <br>
+                           <span class=" text-zinc-400">
+                              The main tools I use to develop my projects.
+                           </span>
+                           </a>
+                        </li>
+                        <li>
+                           <a (click)="navigate('stack')" class="block rounded p-3 hover:bg-zinc-800 text-white cursor-pointer">
+                           Stack
+                           <br>
+                           <span class=" text-zinc-400">
+                           Apps and tools that I use to improve my productivity.
+                           </span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </li>
+               <li class="font-bold">
+                  <a class="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-900 hover:text-zinc-100 focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-zinc-50 dark:data-[active]:bg-zinc-800/50 dark:data-[state=open]:bg-zinc-800/50 cursor-pointer" (click)="navigate('contact')" data-radix-collection-item="">Contact</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <nav aria-label="Main" data-orientation="horizontal" dir="ltr" class="flex max-w-max flex-1 items-center justify-center z-10 mobile-menu">
+         <button class="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 text-zinc-50 group font-bold" type="button" data-drawer-target="menu-drawer" data-drawer-show="menu-drawer" data-drawer-placement="left" aria-controls="menu-drawer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+            </svg>
+         </button>
+      </nav>
+   </div>
+</div>
+<div id="menu-drawer" class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-black w-80" tabindex="-1" aria-labelledby="drawer-left-label">
+   <button type="button" data-drawer-hide="menu-drawer" (click)="navigate('/')">
+      <h5 id="drawer-left-label" class="inline-flex items-center mb-4 text-base p-4 font-semibold text-gray-500 dark:text-gray-400">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-white">
+            <path d="M11.983 1.907a.75.75 0 00-1.292-.657l-8.5 9.5A.75.75 0 002.75 12h6.572l-1.305 6.093a.75.75 0 001.292.657l8.5-9.5A.75.75 0 0017.25 8h-6.572l1.305-6.093z" />
+         </svg>
+      </h5>
+   </button>
+   <button type="button" data-drawer-hide="menu-drawer" aria-controls="menu-drawer" class="text-gray-400 m-4 hover:bg-gray-900 bg-opacity-50 hover:text-gray-500 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center" >
+      <svg class="w-3 h-3 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+      </svg>
+      <span class="sr-only">Close menu</span>
+   </button>
+   <p class="mb-6 text-sm text-gray-500 dark:text-gray-400">
+      <button type="button" data-drawer-hide="menu-drawer" (click)="navigate('about-me')" class="block rounded p-3 hover:bg-zinc-800 text-white">
+         About me
+      </button>
+      <button type="button" data-drawer-hide="menu-drawer" (click)="navigate('projects')" class="block rounded p-3 hover:bg-zinc-800 text-white">
+         Projects
+      </button>
+      <button type="button" data-drawer-hide="menu-drawer" (click)="navigate('podcasts')" class="block rounded p-3 hover:bg-zinc-800 text-white">
+         Podcasts
+      </button>
+      <button type="button" data-drawer-hide="menu-drawer" (click)="navigate('setup')" class="block rounded p-3 hover:bg-zinc-800 text-white">
+         Setup
+      </button>
+      <button type="button" data-drawer-hide="menu-drawer" (click)="navigate('stack')" class="block rounded p-3 hover:bg-zinc-800 text-white">
+         Stack
+      </button>
+      <button type="button" data-drawer-hide="menu-drawer" (click)="navigate('contact')" class="block rounded p-3 hover:bg-zinc-800 text-white">
+         Contact
+      </button>
+   </p>
 </div>
