@@ -1,20 +1,54 @@
 <div class="mx-auto flex flex-col max-w-5xl justify-between gap-10 overflow-hidden px-5 py-8 xl:px-0 text-white">
-  <h1 class="flex font-bold items-start text-4xl">Projects</h1>
-  <p class="text-base text-[#888]">
-    This page lists the <span class="text-white font-bold">{{ originalProjects.length }}</span> main projects that I have been developing during my journey as a programmer. Check out other projects on my <a class="underline" target="_blank" target="_blank" href="https://github.com/user-matth">Github</a>.
-  </p>
-  <input [(ngModel)]="search" (keyup)="searchbar()" class="flex h-10 w-full rounded-md border border-zinc-700 px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-zinc-800 dark:bg-zinc-950 dark:ring-offset-zinc-950 dark:placeholder:text-zinc-400 dark:focus-visible:ring-zinc-300" placeholder="Search the desired project">
+   <p class="flex font-bold items-start text-4xl">Projects</p>
+   <p class="text-base text-[#888]">
+      This page lists the <span class="text-white font-bold">{{ originalProjects.length }}</span> main projects that I have been developing during my journey as a programmer. Check out other projects on my <a class="underline" target="_blank" target="_blank" href="https://github.com/user-matth">Github</a>.
+   </p>
+   <div class="flex gap-4 relative">
+         <input [(ngModel)]="search" (keyup)="searchbar()" class="flex h-10 w-full rounded-md border border-zinc-700 px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-0 disabled:cursor-not-allowed disabled:opacity-50 dark:border-zinc-800 dark:bg-zinc-950 dark:ring-offset-zinc-950 dark:placeholder:text-zinc-400 dark:focus-visible:ring-zinc-300" placeholder="Search the desired project">
+      
+         <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white border border-zinc-700 bg-transparent hover:bg-zinc-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-blue-800" type="button">
+            Sort 
+            <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+            </svg>
+         </button>
+         <div id="dropdown" class="z-10 hidden bg-zinc-900 divide-y border border-zinc-700 divide-gray-100 rounded-md shadow w-44">
+             <ul class="p-2 text-sm text-gray-200 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+               <li>
+                 <a (click)="filterProjectsByTitles([]);" class="block px-4 rounded-sm py-2 hover:bg-zinc-800 hover:text-white">Todos</a>
+               </li>
+               <li>
+                 <a (click)="filterProjectsByTitles(['Complexo Vale do Cerrado', 'Rode Rotas', '4Selet', 'Smart Miles']);" class="block px-4 rounded-sm py-2 hover:bg-zinc-800 hover:text-white">Web</a>
+               </li>
+               <li>
+                 <a (click)="filterProjectsByTitles(['Tik+ Validador', 'Tik+', '4Selet Produtor', 'LIGA - Validador', 'LIGA']);" class="block px-4 rounded-sm py-2 hover:bg-zinc-800 hover:text-white">Mobile</a>
+               </li>
+               <li>
+                 <a (click)="filterProjectsByTitles(['Complexo Vale do Cerrado', '4Selet']);" class="block px-4 rounded-sm py-2 hover:bg-zinc-800 hover:text-white">UI/UX</a>
+               </li>
+             </ul>
+         </div>
+   </div>
+   
+   
   <ul class="animate-in flex flex-col animated-list" style="--index: 3;">
-    <li class="py-6 flex flex-col md:flex-row gap-4 md:gap-6 transition-opacity first:pt-0 last:pb-0" *ngFor="let project of projects">
-       <a class="w-full md:w-2/5 aspect-video bg-tertiary rounded-lg border border-zinc-700 overflow-clip select-none" target="_blank" href="{{ project.link }}">
-          <div class="relative w-full h-full overflow-hidden">
-            <img alt="RodeRotas" loading="lazy" decoding="async" data-nimg="fill" class="w-full h-full" sizes="100vw" [src]="project.image" style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; color: transparent;">
-          </div>
-       </a>
-       <div class="w-full md:w-3/5 space-y-2">
-          <div><a class="text-white font-medium hover:underline" target="_blank" href="{{ project.link }}">{{ project.title }}</a><time class="text-[#888]"> · {{ project.year }}</time></div>
-          <p class="line-clamp-3 text-tertiary">{{ project.description }}</p>
-       </div>
-    </li>
+      <p *ngIf="projects.length == 0">There is no project that I've made with the name: "{{ search }}"</p>
+      <li class="py-6 flex flex-col md:flex-row gap-4 md:gap-6 transition-opacity first:pt-0 last:pb-0" *ngFor="let project of projects">
+         <a class="w-full md:w-2/5 aspect-video bg-tertiary rounded-lg border border-zinc-700 overflow-clip select-none" target="_blank" href="{{ project.link }}">
+            <div class="relative w-full h-full overflow-hidden">
+               <img alt="RodeRotas" loading="lazy" decoding="async" data-nimg="fill" class="w-full h-full" sizes="100vw" [src]="project.image" style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; color: transparent;">
+            </div>
+         </a>
+         <div class="w-full md:w-3/5 space-y-2 h-full">
+            <div>
+               <a class="text-white font-medium hover:underline" target="_blank" href="{{ project.link }}">{{ project.title }}</a>
+               <time class="text-[#888]"> · {{ project.year }}</time>
+            </div>
+            <p class="line-clamp-3 text-tertiary">{{ project.description }}</p>
+            <span class="inline-flex items-center me-2 rounded-md bg-zinc-800 px-2 py-1 text-xs font-medium text-gray-200 ring-1 ring-inset ring-gray-500/10" *ngFor="let tag of project.tags">
+               {{ tag }}
+            </span>
+         </div>
+      </li>
  </ul>
 </div>
